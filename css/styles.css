@@ -301,6 +301,17 @@ a.activo {
 }
 
 /* Responsive tamaño del formulario */
+@media ( max-width: 1360px ) {
+  .formulario-section {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .formulario {
+    width: 120rem;
+    min-height: 55rem;
+    margin: 0 auto;
+  }
+}
 @media (max-width: 1280px) {
   .formulario {
     width: min(90rem, 100%);
