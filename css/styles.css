@@ -1,0 +1,489 @@
+/* Globales */
+:root {
+  --white: #e5eaf5;
+  --dark: #2f2f2f;
+  --primario: #8450b3;
+  --bg-color: #494d5f;
+  --secundario: #a0d2eb;
+  --gris: #d0bdf4;
+
+  --fuente-titulo: "Raleway", sans-serif;
+  --fuente-principal: "Roboto", sans-serif;
+
+  /* --primario: #ffc107; */
+  /* --white: #f2f2f2; */
+  /* --secundario: #0097a7; */
+  /* --gris: #757575; */
+}
+
+html {
+  font-size: 62.5%; /* Hack para font-size 1rem=10px */
+  box-sizing: border-box; /*  Snippet para box sizing */
+  scroll-snap-type: y mandatory;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* Snippet box sizing */
+}
+
+body {
+  height: 10vh;
+  max-width: 100vw;
+  font-size: 16px; /* Hack para font-size 1rem = 10px */
+  font-family: var(--fuente-principal);
+  color: var(--dark);
+  font-weight: 300;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 95%;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
+.boton {
+  background-color: var(--primario);
+  color: var(--white);
+  padding: 1.4rem 2.2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0.7rem;
+  transition: 0.4s ease-out;
+}
+
+.boton:hover {
+  background-color: var(--secundario);
+  color: var(--dark);
+}
+
+.shadow {
+  background-color: var(--white);
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.17);
+  padding: 2rem 0;
+  border-radius: 1rem;
+}
+
+/* Titulos */
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/* Trabajando con el header */
+header {
+  margin-top: 2rem;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.7rem;
+  font-family: var(--fuente-titulo);
+  font-weight: 500;
+  color: var(--white);
+}
+
+.titulo span {
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
+/* Trabajando en la navegacion */
+.nav-bg {
+  background-color: var(--primario);
+  margin-top: 2rem;
+}
+
+.container {
+  width: 90rem;
+  margin: 0 auto;
+}
+
+.navegacion-principal {
+  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navegacion-principal a {
+  padding: 1.2rem 2rem;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.6rem;
+  transition: background-color 0.2s ease-in;
+}
+
+.navegacion-principal a:hover,
+a.activo {
+  /* background-color: var(--secundario); */
+  /* color: var(--dark); */
+
+  background-color: var(--white);
+  border-radius: 0.2rem;
+  color: var(--primario);
+}
+
+@media (max-width: 468px) {
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .titulo span {
+    font-size: 1.4rem;
+  }
+
+  .navegacion-principal {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navegacion-principal a {
+    display: block;
+    padding: 1.2rem 100%;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+}
+
+/* Trabajando en el hero */
+.hero {
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+
+  margin-bottom: 2.3rem;
+}
+
+.contenido-hero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0,0,0,.7);  */
+  background-color: rgb(0 0 0 / 75%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-hero h2 {
+  font-family: var(--fuente-titulo);
+  margin: 0;
+  text-align: center;
+  color: var(--white);
+  font-size: 3.2rem;
+}
+
+.contenido-hero p {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.location-container {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.location-container p {
+  text-align: center;
+  padding: 0 0.7rem;
+}
+
+@media (max-width: 468px) {
+  .contenido-hero h2 {
+    font-size: 2.7rem;
+    line-height: 1.5;
+  }
+
+  .contenido-hero p {
+    font-size: 1.7rem;
+  }
+
+  .contenido-hero .boton {
+    width: 90%;
+    text-align: center;
+    font-size: 1.45rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Servicios */
+.container-servicios {
+  width: 95%;
+}
+
+.titulo-servicios {
+  font-size: 2.3rem;
+  font-family: var(--fuente-titulo);
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.servicios,
+.navegacion-principal, 
+.formulario-section {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.card-servicios {
+  padding: 2rem;
+}
+
+.card-servicios h3 {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.card-servicios p {
+  line-height: 1.5;
+}
+
+.icons-servicios {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 9rem;
+  background-color: var(--primario);
+  margin: 0 auto;
+  border-radius: 3rem;
+  box-shadow: 0px 4px 18px -8px rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 468px) {
+  .servicios {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+/* Formulario */
+.formulario-section {
+  padding: 2rem;
+}
+
+.formulario-section h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.3rem;
+  /* margin: 4rem 0; */
+}
+
+.formulario {
+  background-color: var(--primario);
+  border-radius: 2rem;
+  width: min(60rem, 100%);
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Responsive tamaño del formulario */
+@media (max-width: 1280px) {
+  .formulario {
+    width: min(90rem, 100%);
+    height: min(50rem, 100%);
+    /* height: 35rem; */
+    margin: 0 auto;
+  }
+
+  .formulario label {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+/* Quitando el estilo al fieldset */
+.formulario fieldset {
+  border: none;
+  width: 100%;
+}
+
+/* Estilando el titulo del formulario */
+.formulario legend {
+  font-weight: 700;
+  font-family: var(--fuente-principal);
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-top: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 468px) {
+  .formulario legend {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+}
+
+/* Estilando los labels */
+.container-campos label {
+  font-family: var(--fuente-principal);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+@media (max-width: 468px) {
+  .container-campos label {
+    font-size: 1.2rem;
+  }
+}
+
+/* Alineando el boton  */
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+/* Dando estilos al boton */
+.button button {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--dark);
+  padding: 1.4rem 2.2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0.7rem;
+  transition: color 0.4s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background-color: var(--white);
+  color: var(--primario);
+}
+
+/* Ajustando en las distintas resoluciones */
+/* @media (max-width: 468px) { */
+/*   .formulario .button { */
+/*     display: block; */
+/*   } */
+
+/*   .button button { */
+/*     width: 100%; */
+/*     font-size: 1.3rem; */
+/*     padding: 1.2rem 2rem; */
+/*   } */
+/* } */
+
+/* @media (max-width: 768px) { */
+/*   .formulario .button { */
+/*     display: block; */
+/*   } */
+
+/*   .button button { */
+/*     width: 100%; */
+/*   } */
+/* } */
+
+/* Trabajando en los campos del form */
+.container-campos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
+}
+
+.container-campos .input-text {
+  padding: 1.2rem 1rem;
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4) {
+  grid-column: 1 / 3;
+}
+
+.container-campos .campo {
+  padding: 0.8rem 0;
+}
+
+/* Trabajando en los inputs tipo texto  */
+.container-campos .input-text {
+  width: 100%;
+  padding: 1.2rem 1.3rem;
+  color: var(--dark);
+  font-size: 1.3rem;
+  font-family: var(--fuente-titulo);
+  border: none;
+  border-radius: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+/* Trabajando en los inputs tipo textarea  */
+.input-area {
+  width: 100%;
+  height: 16rem;
+  border-radius: 0.4rem;
+  resize: none;
+  margin: 0.6rem 0;
+}
+
+/* Trabajando en el posicionamiento de los inputs */
+/* @media (max-width: 768px) { */
+/*   .container-campos { */
+/*     display: grid; */
+/*     grid-template-columns: repeat(2, 1fr); */
+/*     grid-column-gap: 1rem; */
+/*   } */
+
+/*   .container-campos .input-text { */
+/*     padding: 1.2rem 1rem; */
+/*   } */
+
+/*   .campo:nth-child(3), */
+/*   .campo:nth-child(4) { */
+/*     grid-column: 1 / 3; */
+/*   } */
+/* } */
+
+@media (max-width: 468px) {
+  .container-campos {
+    display: block;
+  }
+
+  .container-campos .input-text {
+    padding: 0.8rem;
+  }
+}
+
+/* Footer */
+.footer {
+  font-family: var(--fuente-principal);
+  text-align: center;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 468px) {
+  .footer {
+    font-size: 1.3rem;
+  }
+}
